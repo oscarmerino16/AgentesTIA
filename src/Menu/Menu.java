@@ -23,6 +23,7 @@ public class Menu {
 			switch (opc) {
 			case 1:
 				System.out.println("Accediento a los agentes");
+				
 				break;
 			case 2:
 				System.out.println("Accediendo al pagos de los agentes");
