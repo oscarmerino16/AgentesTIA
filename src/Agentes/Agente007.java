@@ -1,6 +1,6 @@
 package Agentes;
 
-public final class Agente007 extends Jefazo {
+public final class Agente007 extends Agente {
 
 	private int contmuertes;
 	private int cantarmas;
@@ -23,7 +23,13 @@ public final class Agente007 extends Jefazo {
 	}
 	@Override
 	public String toString() {
-		return "Agente007 [contmuertes=" + contmuertes + ", cantarmas=" + cantarmas + "]";
+		return     "Nombre: " + Nombre + "\n"
+				   +"Edad: " + Edad + "\n"
+				   +"Direccion: " + Direccion + "\n"
+				   +"Salario: " + Salario + "\n"
+				   +"Contador de muertes: " + contmuertes + "\n"
+				   +"Cantidad de armas: " + cantarmas + "\n"
+					;
 	}
 	
 	
