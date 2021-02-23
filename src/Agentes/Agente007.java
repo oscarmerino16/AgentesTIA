@@ -4,10 +4,13 @@ public final class Agente007 extends Agente {
 
 	private int contmuertes;
 	private int cantarmas;
+	private String[] vArmar;
+	
 	public Agente007(String nombre, int edad, String direccion, double salario, int contmuertes, int cantarmas) {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
 		this.cantarmas = cantarmas;
+		 
 	}
 	public int getContmuertes() {
 		return contmuertes;
