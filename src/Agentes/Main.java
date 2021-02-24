@@ -1,6 +1,6 @@
 package Agentes;
 
-<<<<<<< HEAD
+
 import java.util.Scanner;
 
 import Menu.Menu;
@@ -86,7 +86,7 @@ public class Main {
 		//verAgentes(vAgentes);
 		//verAgentesDinero(vAgentes);
 		
-=======
+
 import IODatos.Arma;
 import IODatos.IODato;
 
