@@ -69,6 +69,21 @@ public class Main {
 		}*/
 	}
 	
+	public static String[] addPiso(String[] vPiso) {
+		Scanner leer = new Scanner(System.in);
+		
+		String direccion;
+		
+		System.out.println("Dime la direccion del piso");
+		direccion = leer.next();
+		for (int i = 0; i < vPiso.length; i++) {
+			if (vPiso[i]==null) {
+				vPiso[i]= new String(direccion);
+			}
+		}
+		return vPiso;
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -96,8 +111,8 @@ public class Main {
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
 		
-		IODato.cargarArmas("Arma.dat", vArma);
-		IODato.cargarPiso("Piso.dat", vPiso);
+		//IODato.cargarArmas("Arma.dat", vArma);
+		//IODato.cargarPiso("Piso.dat", vPiso);
 		
 		
 		do {
@@ -115,6 +130,7 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Dando de alta un Piso");
+				addPiso(vPiso);
 				opc=-1;
 				break;
 			case 4:
