@@ -96,7 +96,7 @@ public class Main {
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
 		
-		IODato.cargarPiso("Arma.dat", vArma);
+		IODato.cargarArmas("Arma.dat", vArma);
 		IODato.cargarPiso("Piso.dat", vArma);
 		
 		
