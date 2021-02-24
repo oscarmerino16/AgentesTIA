@@ -1,13 +1,20 @@
 package Agentes;
 
-
 import java.util.Scanner;
 
-import Menu.Menu;
-import IODatos.Arma;
-import IODatos.IODato;
+public class Main {
 
-
+	public static void verAgentes(Agente[] vAgentes) {
+		
+		Scanner leer = new Scanner(System.in);
+		
+		for (Agente a : vAgentes) {
+			if (a!=null) {
+				System.out.println(a);
+			}
+		}
+		
+	}
 	
 	public static void verAgentesDinero(Agente[] vAgentes) {
 		
@@ -61,8 +68,8 @@ import IODatos.IODato;
 	}
 	
 	
-
-
+	public static void main(String[] args) {
+		
 		Agente[] vAgentes = new Agente[10];
 
 		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011);
@@ -71,30 +78,6 @@ import IODatos.IODato;
 		
 		//verAgentes(vAgentes);
 		//verAgentesDinero(vAgentes);
-		
-
-
-
-public class Main {
-
-	public static void main(String[] args) {
-	/*
-		Arma vArma[]= new Arma[10];
-
-		vArma[0]= new Arma("pistola", 9, false, 10, 3);
-		vArma[1]= new Arma("Escopeta", 8, false, 8, 15);
-		vArma[2]= new Arma("rifle asalto", 12, true, 25, 5);
-		vArma[3]= new Arma("rifle francotirador", 20, true, 5, 3);
-		vArma[4]= new Arma("Subfusil", 10, true, 20, 7);
-		
-		for (int i = 0; i < vArma.length; i++) {
-			if (vArma[i]==null) {
-				IODato.cargarArmas("Arma.dat", vArma);
-			}
-		}
-		*/
-		
-		IODato.leerArma("Arma.dat");
 		
 	}
 
