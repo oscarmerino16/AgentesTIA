@@ -7,18 +7,6 @@ import Menu.Menu;
 import IODatos.Arma;
 import IODatos.IODato;
 
-	public static void verAgentes(Agente[] vAgentes) {
-		
-		Scanner leer = new Scanner(System.in);
-		
-		for (Agente a : vAgentes) {
-			if (a!=null) {
-				System.out.println(a);
-			}
-
-		}
-
-	}
 
 	
 	public static void verAgentesDinero(Agente[] vAgentes) {
