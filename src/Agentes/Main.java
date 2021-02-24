@@ -2,6 +2,8 @@ package Agentes;
 
 import java.util.Scanner;
 
+import IODatos.IODato;
+
 public class Main {
 
 	public static void verAgentes(Agente[] vAgentes) {
@@ -85,6 +87,7 @@ public class Main {
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
 		
+		IODato.cargarPiso("Arma.dat", vPiso);
 		
 		do {
 			opc=Menu.pintaMenu();

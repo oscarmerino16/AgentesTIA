@@ -10,7 +10,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
-import Agentes.Piso;
 
 public class IODato {
 	
@@ -125,7 +124,7 @@ public class IODato {
 		}
 	}
 	
-	public static String[] cargarPiso(String rutafichero) {
+	public static String[] leerPiso(String rutafichero) {
 		
 		String[] vPiso= new String[10];
 		
