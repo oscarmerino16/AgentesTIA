@@ -6,7 +6,7 @@ import IODatos.IODato;
 public class Main {
 
 	public static void main(String[] args) {
-	
+	/*
 		Arma vArma[]= new Arma[10];
 
 		vArma[0]= new Arma("pistola", 9, false, 10, 3);
@@ -15,7 +15,14 @@ public class Main {
 		vArma[3]= new Arma("rifle francotirador", 20, true, 5, 3);
 		vArma[4]= new Arma("Subfusil", 10, true, 20, 7);
 		
-		IODato.cargarArmas("Arma.dat", vArma);
+		for (int i = 0; i < vArma.length; i++) {
+			if (vArma[i]==null) {
+				IODato.cargarArmas("Arma.dat", vArma);
+			}
+		}
+		*/
+		
+		IODato.leerArma("Arma.dat");
 		
 	}
 

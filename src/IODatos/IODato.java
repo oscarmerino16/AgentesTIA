@@ -1,12 +1,13 @@
 package IODatos;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class IODato {
 	public static void cargarArmas(String rutaFichero, Arma[] Datos) {
@@ -24,14 +25,16 @@ public class IODato {
 		
 		
 		try (FileOutputStream fo = new FileOutputStream(f);
-			 DataOutputStream escribir = new DataOutputStream(fo);){
+			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
 			
 			for (Arma ar : Datos) {
-				escribir.writeUTF(ar.getNombre());
-				escribir.writeInt(ar.getMunicion());
-				escribir.writeBoolean(ar.isMira());
-				escribir.writeInt(ar.getCargador());
-				escribir.writeInt(ar.getCargadores());
+				if (ar!=null) {
+					escribir.writeUTF(ar.getNombre());
+					escribir.writeInt(ar.getMunicion());
+					escribir.writeBoolean(ar.isMira());
+					escribir.writeInt(ar.getCargador());
+					escribir.writeInt(ar.getCargadores());
+				}
 			}
 			
 			
@@ -62,15 +65,16 @@ public class IODato {
 		}
 		
 		try (FileInputStream fi = new FileInputStream(f);
-			 DataInputStream leer = new DataInputStream(fi);){
+			 ObjectInputStream leer = new ObjectInputStream(fi);){
 			
 			
 			while (true) {
-				leer.readUTF();
-				leer.readInt();
-				leer.readBoolean();
-				leer.readInt();
-				leer.readInt();
+				System.out.println(leer.readUTF());
+				System.out.println(leer.readInt());
+				System.out.println(leer.readBoolean());
+				System.out.println(leer.readInt());
+				System.out.println(leer.readInt());
+				System.out.println("");
 			}
 			
 			
