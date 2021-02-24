@@ -97,7 +97,7 @@ public class Main {
 		int opc = 0;
 		
 		IODato.cargarArmas("Arma.dat", vArma);
-		IODato.cargarPiso("Piso.dat", vArma);
+		IODato.cargarPiso("Piso.dat", vPiso);
 		
 		
 		do {
