@@ -1,10 +1,37 @@
 package Agentes;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import IODatos.IODato;
 
 public class Main {
+	
+	public static void addArma(String rutaFichero) {
+		File f = new File(rutaFichero);
+		if (!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		try (FileWriter esc = new FileWriter(f, true); PrintWriter escribir = new PrintWriter(esc);) {
+			Scanner leer = new Scanner(System.in);
+			if (rutaFichero.equalsIgnoreCase("Arma.dat")) {
+				System.out.println("Que arma quieres añadir");
+				String arma = leer.next();
+				escribir.println(arma);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 
 	public static void verAgentes(Agente[] vAgentes) {
 		
