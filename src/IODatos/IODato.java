@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class IODato {
 	
-	public static void cargarArmas(String rutaFichero, Arma[] Datos) {
+	public static void cargarArmas(String rutaFichero, String[] Datos) {
 		File f = new File(rutaFichero);
 		
 		if (!f.exists()) {
@@ -30,7 +30,7 @@ public class IODato {
 		try (FileOutputStream fo = new FileOutputStream(f);
 			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
 			
-			for (Arma ar : Datos) {
+			for (String ar : Datos) {
 				if (ar!=null) {
 					String nombre;
 					Scanner leer = new Scanner(System.in);
@@ -53,11 +53,11 @@ public class IODato {
 	}
 	
 	
-	public static Arma[] leerArma(String rutaFichero) {
+	public static String[] leerArma(String rutaFichero) {
 		
 		File f = new File(rutaFichero);
 		
-		Arma[] vArma = new Arma[10];
+		String[] vArma = new String[10];
 		
 		if (!f.exists()) {
 			try {
