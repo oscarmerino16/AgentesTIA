@@ -30,7 +30,7 @@ public class Main {
 		
 	}
 	
-	public void addAgente() {
+	public static void addAgente() {
 		Scanner leer = new Scanner(System.in);
 		
 		String nombre, direccion, tipo;
@@ -72,13 +72,45 @@ public class Main {
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
 		
-		Menu.pintaMenu();
-		try {
-			opc=leer.nextInt();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		Menu.eleccionMenu(opc);
+		
+		do {
+			opc=Menu.pintaMenu();
+			switch (opc) {
+			case 1:
+				System.out.println("Accediento a los agentes");
+				
+				break;
+			case 2:
+				System.out.println("Accediendo al pagos de los agentes");
+
+				break;
+			case 3:
+				System.out.println("Dando de alta un Piso");
+
+				break;
+			case 4:
+				System.out.println("Dando de alta una Arma");
+				break;
+			case 5:
+				System.out.println("Dando de alta un Agente");
+				addAgente();
+				System.out.println("Agente añadido");
+				break;
+			case 6:
+				System.out.println("Encriptando la informacion");
+				break;
+			case 7:
+				System.out.println("Dessencriptando la informacion");
+				break;
+			case 8:
+				System.out.println("Saliendo");
+				opc=0;
+				break;
+			default:
+				break;
+			}
+
+		} while (opc == 8);
 		
 		
 		Agente[] vAgentes = new Agente[10];
