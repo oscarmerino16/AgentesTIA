@@ -1,15 +1,16 @@
 package Agentes;
 
+import IODatos.IODato;
+
 public final class Agente007 extends Agente {
 
 	private int contmuertes;
-	private int cantarmas;
 	private String[] vArmar;
 	
-	public Agente007(String nombre, int edad, String direccion, double salario, int contmuertes, int cantarmas) {
+	public Agente007(String nombre, int edad, String direccion, double salario, int contmuertes) {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
-		this.cantarmas = cantarmas;
+		this.vArmar = IODato.cargarArmas("Arma.dat", Datos);
 		 
 	}
 	public int getContmuertes() {
@@ -18,11 +19,12 @@ public final class Agente007 extends Agente {
 	public void setContmuertes(int contmuertes) {
 		this.contmuertes = contmuertes;
 	}
-	public int getCantarmas() {
-		return cantarmas;
+	
+	public String[] getvArmar() {
+		return vArmar;
 	}
-	public void setCantarmas(int cantarmas) {
-		this.cantarmas = cantarmas;
+	public void setvArmar(String[] vArmar) {
+		this.vArmar = vArmar;
 	}
 	@Override
 	public String toString() {
