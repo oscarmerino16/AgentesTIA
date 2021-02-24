@@ -146,6 +146,8 @@ public class Main {
 				break;
 			case 4:
 				System.out.println("Dando de alta una Arma");
+				addArma("Arma.dat");
+				System.out.println("Arma añadida");
 				opc=-1;
 				break;
 			case 5:
