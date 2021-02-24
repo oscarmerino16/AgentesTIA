@@ -50,7 +50,7 @@ public class Main {
 		tipo=leer.next();
 		
 		if (tipo.equalsIgnoreCase("Jefazo")) {
-			System.out.println("Dime el año de mandato del nuevo agente");
+			System.out.println("Dime el aï¿½o de mandato del nuevo agente");
 			ano_mandato = leer.nextInt();
 		}
 		if (tipo.equalsIgnoreCase("Agente007")) {
@@ -69,6 +69,17 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
+		Scanner leer = new Scanner(System.in);
+		int opc = 0;
+		
+		Menu.pintaMenu();
+		try {
+			opc=leer.nextInt();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		Menu.eleccionMenu(opc);
+		
 		
 		Agente[] vAgentes = new Agente[10];
 
