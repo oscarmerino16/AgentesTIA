@@ -90,7 +90,8 @@ public class IODato {
 		return vArma;
 	}
 	
-	public static void cargarPiso(String rutaFichero, Piso[] piso) {
+	
+	public static void cargarPiso(String rutaFichero, String[] piso) {
 		File f = new File(rutaFichero);
 		
 		if (!f.exists()) {
@@ -104,7 +105,7 @@ public class IODato {
 		
 		try (FileOutputStream fo = new FileOutputStream(f);
 			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
-			for (Piso p : piso) {
+			for (String p : piso) {
 				String nombre;
 				Scanner leer = new Scanner(System.in);
 				
@@ -124,9 +125,9 @@ public class IODato {
 		}
 	}
 	
-	public static Piso[] cargarPiso(String rutafichero) {
+	public static String[] cargarPiso(String rutafichero) {
 		
-		Piso[] vPiso= new Piso[10];
+		String[] vPiso= new String[10];
 		
 		File f = new File(rutafichero);
 		
