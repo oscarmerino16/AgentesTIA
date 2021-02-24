@@ -11,11 +11,9 @@ public final class Agente007 extends Agente {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
 
-<<<<<<< HEAD
-		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso())
-=======
 
->>>>>>> main
+		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso())
+
 		
 		//this.vArmar = ;
 		
@@ -45,13 +43,13 @@ public final class Agente007 extends Agente {
 				   +"Contador de muertes: " + contmuertes + "\n"
 
 //				   +"Cantidad de armas: " + cantarmas + "\n"
-<<<<<<< HEAD
-				   +"Cantidad de armas: " + vArmar + "\n"
-=======
 
 				   +"Cantidad de armas: " + vArmar + "\n"
 
->>>>>>> main
+
+				   +"Cantidad de armas: " + vArmar + "\n"
+
+
 					;
 	}
 	
