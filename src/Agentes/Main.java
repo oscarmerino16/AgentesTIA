@@ -4,10 +4,8 @@ package Agentes;
 import java.util.Scanner;
 
 import Menu.Menu;
-
-public class Main {
-
-
+import IODatos.Arma;
+import IODatos.IODato;
 
 	public static void verAgentes(Agente[] vAgentes) {
 		
@@ -57,7 +55,7 @@ public class Main {
 		tipo=leer.next();
 		
 		if (tipo.equalsIgnoreCase("Jefazo")) {
-			System.out.println("Dime el aÃ±o de mandato del nuevo agente");
+			System.out.println("Dime el año de mandato del nuevo agente");
 			ano_mandato = leer.nextInt();
 		}
 		if (tipo.equalsIgnoreCase("Agente007")) {
@@ -87,15 +85,13 @@ public class Main {
 		//verAgentesDinero(vAgentes);
 		
 
-import IODatos.Arma;
-import IODatos.IODato;
+
 
 public class Main {
 
 	public static void main(String[] args) {
 	/*
 		Arma vArma[]= new Arma[10];
->>>>>>> Ficheros_armas_pisos
 
 		vArma[0]= new Arma("pistola", 9, false, 10, 3);
 		vArma[1]= new Arma("Escopeta", 8, false, 8, 15);
