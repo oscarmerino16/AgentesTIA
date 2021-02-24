@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 import Agentes.Piso;
 
@@ -32,11 +33,11 @@ public class IODato {
 			
 			for (Arma ar : Datos) {
 				if (ar!=null) {
-					escribir.writeUTF(ar.getNombre());
-					escribir.writeInt(ar.getMunicion());
-					escribir.writeBoolean(ar.isMira());
-					escribir.writeInt(ar.getCargador());
-					escribir.writeInt(ar.getCargadores());
+					String nombre;
+					Scanner leer = new Scanner(System.in);
+					
+					nombre=leer.next();
+					escribir.writeUTF(nombre);
 				}
 			}
 			
@@ -74,10 +75,6 @@ public class IODato {
 			
 			while (true) {
 				System.out.println(leer.readUTF());
-				System.out.println(leer.readInt());
-				System.out.println(leer.readBoolean());
-				System.out.println(leer.readInt());
-				System.out.println(leer.readInt());
 				System.out.println("");
 			}
 			
@@ -108,10 +105,11 @@ public class IODato {
 		try (FileOutputStream fo = new FileOutputStream(f);
 			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
 			for (Piso p : piso) {
+				String nombre;
+				Scanner leer = new Scanner(System.in);
 				
-				escribir.writeUTF(p.getNombre());
-				escribir.writeInt(p.getNum());
-				escribir.writeUTF(p.getDireccion());
+				nombre=leer.next();
+				escribir.writeUTF(nombre);
 				
 			}
 			
@@ -145,8 +143,6 @@ public class IODato {
 			 ObjectInputStream leer = new ObjectInputStream(fi);){
 			
 			while (true) {
-				leer.readUTF();
-				leer.readInt();
 				leer.readUTF();
 			}
 			
