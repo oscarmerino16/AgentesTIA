@@ -30,7 +30,7 @@ public class Main {
 		
 	}
 	
-	public void addAgente() {
+	public static void addAgente() {
 		Scanner leer = new Scanner(System.in);
 		
 		String nombre, direccion, tipo;
@@ -69,23 +69,64 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		Scanner leer = new Scanner(System.in);
-		int opc = 0;
-		
-		Menu.pintaMenu();
-		try {
-			opc=leer.nextInt();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		Menu.eleccionMenu(opc);
-		
 		
 		Agente[] vAgentes = new Agente[10];
 
 		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011);
 		vAgentes[1] = new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250, 5);
 		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500, 2);
+		
+		Scanner leer = new Scanner(System.in);
+		int opc = 0;
+		
+		
+		do {
+			opc=Menu.pintaMenu();
+			switch (opc) {
+			case 1:
+				System.out.println("Accediento a los agentes");
+				verAgentes(vAgentes);
+				opc=-1;
+				break;
+			case 2:
+				System.out.println("Accediendo al pagos de los agentes");
+				verAgentesDinero(vAgentes);
+				opc=-1;
+				break;
+			case 3:
+				System.out.println("Dando de alta un Piso");
+				opc=-1;
+				break;
+			case 4:
+				System.out.println("Dando de alta una Arma");
+				opc=-1;
+				break;
+			case 5:
+				System.out.println("Dando de alta un Agente");
+				addAgente();
+				System.out.println("Agente añadido");
+				opc=-1;
+				break;
+			case 6:
+				System.out.println("Encriptando la informacion");
+				opc=-1;
+				break;
+			case 7:
+				System.out.println("Dessencriptando la informacion");
+				opc=-1;
+				break;
+			case 8:
+				System.out.println("Saliendo");
+				opc=8;
+				break;
+			default:
+				break;
+			}
+
+			
+		} while (opc<1 || opc>8);
+		
+		
 		
 		//verAgentes(vAgentes);
 		//verAgentesDinero(vAgentes);

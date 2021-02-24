@@ -48,7 +48,7 @@ public class Agente {
 	}
 
 	@Override
-	public String toString() {
+	public  String toString() {
 		return "Agente [Nombre=" + Nombre + ", Edad=" + Edad + ", Direccion=" + Direccion + ", Salario=" + Salario
 				+ "]";
 	}
