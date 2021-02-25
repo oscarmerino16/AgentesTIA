@@ -1,16 +1,7 @@
 package Agentes;
 
-<<<<<<< HEAD
 import java.io.File;
 
-public class Encriptar {
-	
-	public static void encriptarInfo() {
-		File F = new File("Encriptar.dat");
-	}
-	
-	
-=======
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,5 +31,4 @@ public class Encriptar {
 	
 	
 	
->>>>>>> des
 }

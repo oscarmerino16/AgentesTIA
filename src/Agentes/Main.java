@@ -33,10 +33,7 @@ public class Main {
 		
 	}
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	public static void verAgentes(Agente[] vAgentes) {
 		
 		Scanner leer = new Scanner(System.in);
@@ -45,10 +42,7 @@ public class Main {
 			if (a!=null) {
 				System.out.println(a);
 			}
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 		}
 		
 	}
@@ -65,7 +59,7 @@ public class Main {
 			}
 		}
 		
-<<<<<<< Updated upstream
+
 	}
 	
 	public static void addAgente() {
@@ -123,15 +117,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-=======
-
-		Menu.pintaMenu();
-		try {
-			opc=leer.nextInt();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		Menu.eleccionMenu(opc);
 /*
 		Jefazo vAgentes[] = new Jefazo[10];
 
@@ -140,7 +125,7 @@ public class Main {
 		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500, 2);
 */
 
->>>>>>> Stashed changes
+
 		Agente[] vAgentes = new Agente[10];
 
 		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011);
@@ -223,10 +208,7 @@ public class Main {
 		//verAgentes(vAgentes);
 		//verAgentesDinero(vAgentes);
 		
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	}
 
 }
