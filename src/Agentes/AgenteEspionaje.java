@@ -1,20 +1,24 @@
 package Agentes;
 
+import IODatos.IODato;
+
 public final class AgenteEspionaje extends Agente  {
 
-	private int pisos;
+	private String [] vPisos;
 
-	public AgenteEspionaje(String nombre, int edad, String direccion, double salario, int pisos) {
+	public AgenteEspionaje(String nombre, int edad, String direccion, double salario) {
 		super(nombre, edad, direccion, salario);
-		this.pisos = pisos;
+		this.vPisos = IODato.cargarDatosTexto("Piso.dat");
 	}
 
-	public int getPisos() {
-		return pisos;
+
+	public String[] getvPisos() {
+		return vPisos;
 	}
 
-	public void setPisos(int pisos) {
-		this.pisos = pisos;
+
+	public void setvPisos(String[] vPisos) {
+		this.vPisos = vPisos;
 	}
 
 	@Override
@@ -23,7 +27,7 @@ public final class AgenteEspionaje extends Agente  {
 			   +"Edad: " + Edad + "\n"
 			   +"Direccion: " + Direccion + "\n"
 			   +"Salario: " + Salario + "\n"	
-			   +"Pisos: " + pisos + "\n"
+			   +"Pisos: " + vPisos + "\n"
 				;
 	}
 

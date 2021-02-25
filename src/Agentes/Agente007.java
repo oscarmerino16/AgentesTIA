@@ -10,14 +10,9 @@ public final class Agente007 extends Agente {
 	public Agente007(String nombre, int edad, String direccion, double salario, int contmuertes) {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
+		this.vArmar = IODato.cargarDatosTexto("Arma.dat");
 
-
-		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso())
-
-		
-		//this.vArmar = ;
-		
-		
+		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso());
 
 		 
 	}
@@ -40,15 +35,8 @@ public final class Agente007 extends Agente {
 				   +"Edad: " + Edad + "\n"
 				   +"Direccion: " + Direccion + "\n"
 				   +"Salario: " + Salario + "\n"
-				   +"Contador de muertes: " + contmuertes + "\n"
-
-//				   +"Cantidad de armas: " + cantarmas + "\n"
-
+				   +"Contador de muertes: " + contmuertes + "\n"			
 				   +"Cantidad de armas: " + vArmar + "\n"
-
-
-				   +"Cantidad de armas: " + vArmar + "\n"
-
 
 					;
 	}

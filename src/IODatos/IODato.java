@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -157,4 +158,39 @@ public class IODato {
 		
 		return vPiso;
 	}
+
+
+	public static String[] cargarDatosTexto(String rutaFichero) {
+		
+		String[] vector = new String[10];
+
+		File f = new File(rutaFichero);
+
+		if (!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		try (FileReader fr = new FileReader(f); Scanner leer = new Scanner(fr);) {
+
+			int cont = 0;
+			while (leer.hasNext()) {
+				String linea = leer.nextLine();
+				vector[cont] = linea;
+				cont++;
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		return vector;
+	}
+	
+
 }

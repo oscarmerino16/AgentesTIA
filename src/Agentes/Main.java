@@ -82,7 +82,7 @@ public class Main {
 		tipo=leer.next();
 		
 		if (tipo.equalsIgnoreCase("Jefazo")) {
-			System.out.println("Dime el a�o de mandato del nuevo agente");
+			System.out.println("Dime el año de mandato del nuevo agente");
 			ano_mandato = leer.nextInt();
 		}
 		if (tipo.equalsIgnoreCase("Agente007")) {
@@ -130,7 +130,7 @@ public class Main {
 
 		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011);
 		vAgentes[1] = new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250);
-		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500, 2);
+		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500);
 		
 		String[] vArma = new String[10];
 
