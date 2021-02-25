@@ -62,11 +62,11 @@ public class Main {
 
 	}
 	
-	public static void addAgente() {
+	public static void addAgente(Agente[] vector) {
 		Scanner leer = new Scanner(System.in);
 		
 		String nombre, direccion, tipo;
-		int edad, ano_mandato, contmuertes;
+		int edad, ano_mandato, contmuertes, libre=buscarHueco(vector);
 		double salario;
 		
 		System.out.println("Dime el nombre del nuevo agente");
@@ -84,6 +84,7 @@ public class Main {
 		if (tipo.equalsIgnoreCase("Jefazo")) {
 			System.out.println("Dime el año de mandato del nuevo agente");
 			ano_mandato = leer.nextInt();
+			vector[libre] = new Jefazo(nombre, edad, direccion, salario, ano_mandato);
 		}
 		if (tipo.equalsIgnoreCase("Agente007")) {
 			System.out.println("Dime el numero de muertos del nuevo agente");
@@ -91,12 +92,25 @@ public class Main {
 			/*/comprobar con fichero de armas
 			System.out.println("Dime las armas del nuevo agente");
 			contmuertes=leer.nextInt();*/
+			vector[libre] = new Agente007(nombre, edad, direccion, salario, contmuertes);
 		}
 		//comprobar con fichero pisos
 		/*if (tipo.equalsIgnoreCase("Agente de Espionaje")) {
 			System.out.println("Dime los pisos del nuevo agente");
 			salario = leer.nextDouble();
 		}*/
+			vector[libre]= new AgenteEspionaje(nombre, edad, direccion, salario);
+		
+			
+	}
+	private static int buscarHueco(Agente[] vector) {
+		for (int i = 0; i < vector.length; i++) {
+			if (vector==null) {
+				return i;
+			}
+		}
+		
+		return -1;
 	}
 	
 	public static String[] addPiso(String[] vPiso) {
@@ -180,7 +194,7 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Dando de alta un Agente");
-				addAgente();
+				addAgente(vAgentes);
 				System.out.println("Agente añadido");
 				opc=-1;
 				break;
