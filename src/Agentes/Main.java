@@ -11,6 +11,7 @@ import IODatos.IODato;
 public class Main {
 	
 	public static void addArma(String rutaFichero) {
+		
 		File f = new File(rutaFichero);
 		if (!f.exists()) {
 			try {
