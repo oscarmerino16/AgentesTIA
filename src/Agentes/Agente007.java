@@ -11,7 +11,7 @@ public final class Agente007 extends Agente {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
 		
-		this.vArmar = IODato.cargarDatosTexto("Arma.txt");
+		this.vArmar = IODato.cargarDatosTexto("Arma.dat");
 
 		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso());
 
