@@ -201,10 +201,12 @@ public class Main {
 				break;
 			case 6:
 				System.out.println("Encriptando la informacion");
+				Encriptar.encriptarInfo("Encriptado.dat",vAgentes);
 				opc=-1;
 				break;
 			case 7:
 				System.out.println("Dessencriptando la informacion");
+				Encriptar.desencriptarInfo("Encriptado.dat");
 				opc=-1;
 				break;
 			case 8:
