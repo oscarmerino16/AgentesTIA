@@ -29,6 +29,10 @@ public class Agente {
 		this.Direccion = direccion;
 		this.Salario = salario;
 	}
+	/**
+	 * 
+	 * @return nos devuelve el nombre del agente
+	 */
 
 	public String getNombre() {
 		return Nombre;
@@ -44,7 +48,7 @@ public class Agente {
 	
 	/**
 	 * 
-	 * @return nos devuelve el nombre del agente
+	 * @return nos devuelve la edad del agente
 	 */
 	public int getEdad() {
 		return Edad;
@@ -59,7 +63,7 @@ public class Agente {
 	}
 	/**
 	 * 
-	 * @return nos devuelve la edad del agente
+	 * @return nos devuelve la direccion del agente
 	 */
 
 	public String getDireccion() {
@@ -75,7 +79,7 @@ public class Agente {
 	}
 	/**
 	 * 
-	 * @return nos devuelve la direccion del agente
+	 * @return nos devuelve el salario del agente
 	 */
 
 	public double getSalario() {

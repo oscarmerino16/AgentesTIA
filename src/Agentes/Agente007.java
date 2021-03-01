@@ -32,8 +32,8 @@ public final class Agente007 extends Agente {
 	}
 	/**
 	 * 
-	 * @return delvovemos los atributos de Agente007 
-	 * Descricion el vector de armas es igual a lo que haya en el archivo de arma.dat
+	 * @return delvovemos el numero de muertes
+	 *
 	 */
 	public int getContmuertes() {
 		return contmuertes;
@@ -47,7 +47,7 @@ public final class Agente007 extends Agente {
 	}
 	/**
 	 * 
-	 * @return devolvemos el numero de muertes
+	 * @return devolvemos el vector de armas
 	 */
 	public String[] getvArmar() {
 		return vArmar;

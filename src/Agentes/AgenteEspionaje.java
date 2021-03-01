@@ -25,8 +25,8 @@ public final class AgenteEspionaje extends Agente  {
 	}
 	/**
 	 * 
-	 * @return Devolvemos todos los atributos de AgenteEspionaje
-	 * Descripcion El vector de pisos es a lo que haya dentro del archivo "Piso.dat"
+	 * @return el vector de pisos
+	 * 
 	 */
 
 

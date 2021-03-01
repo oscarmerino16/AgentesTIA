@@ -25,7 +25,7 @@ public final class Jefazo extends Agente {
 	}
 	/**
 	 * 
-	 * @return devolvemos todos los atributos que tenemos para jefazo
+	 * @return devolvemos el año de mandato
 	 */
 
 	public int getAno_mandato() {
