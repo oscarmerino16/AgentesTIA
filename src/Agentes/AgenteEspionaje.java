@@ -2,25 +2,46 @@ package Agentes;
 
 import IODatos.IODato;
 
+/**
+ * Descripcion en esta clase declaramos el vector de pisos y cogemos los atributos de la clase padre
+ * @author Oscar Merino Cases y Marcos Hernandez Aragones
+ * @version 1/03/2021 1.0
+ *
+ */
+ 
 public final class AgenteEspionaje extends Agente  {
 
 	private String [] vPisos;
-
+	/**
+	 * 
+	 * @param nombre
+	 * @param edad
+	 * @param direccion
+	 * @param salario
+	 */
 	public AgenteEspionaje(String nombre, int edad, String direccion, double salario) {
 		super(nombre, edad, direccion, salario);
 		this.vPisos = IODato.cargarDatosTexto("Piso.dat");
 	}
+	/**
+	 * 
+	 * @return Devolvemos todos los atributos de AgenteEspionaje
+	 * Descripcion El vector de pisos es a lo que haya dentro del archivo "Piso.dat"
+	 */
 
 
 	public String[] getvPisos() {
 		return vPisos;
 	}
-
+	/**
+	 * 
+	 * @param vPisos
+	 */
 
 	public void setvPisos(String[] vPisos) {
 		this.vPisos = vPisos;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Nombre: " + Nombre + "\n"
@@ -31,9 +52,4 @@ public final class AgenteEspionaje extends Agente  {
 				;
 	}
 
-	
-	
-	
-	
-	
 }
