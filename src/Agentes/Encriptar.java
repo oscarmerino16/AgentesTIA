@@ -12,13 +12,30 @@ import java.io.ObjectOutputStream;
 
 import IODatos.IODato;
 
+/**
+ * Esta clase defines los metodos tanto de encriptar como de desencriptar.
+ * @author Óscar Merino Cases y Marcos Hernandez Aragones.
+ * @version 1/03/2021 1.0
+ * 
+ */
+
 public class Encriptar {
-	
+	/**
+	 * Encriptacion de la informacion.
+	 * @param rutaFichero Ruta relativa del fichero.
+	 * @param vAgentes Vector de los agentes que llega desde Main.
+	 */
 	public static void encriptarInfo(String rutaFichero,Agente[] vAgentes) {
+		
 		
 		File f = new File(rutaFichero);
 		File far = new File("Arma.dat");
 		File fpi = new File("piso.dat");
+		
+		/**
+		 * Creacion del archivo donde se va aguardar toda la informacion.
+		 * Archivos de donde se va a sacar la informacion.
+		 */
 		
 		if (!f.exists()) {
 			try {
@@ -29,7 +46,9 @@ public class Encriptar {
 			}
 		}
 		
-		
+		/**
+		 * Comprobar si exsiste el archivo anterior y si no exsiste crearlo.
+		 */
 		
 		
 		
@@ -41,15 +60,23 @@ public class Encriptar {
 			
 			escribir.writeObject(vArma);
 			
-			String[] vPiso = IODato.cargarDatosTexto("Prma.dat");
+			String[] vPiso = IODato.cargarDatosTexto("Piso.dat");
 			
 			escribir.writeObject(vPiso);
 			
 			escribir.writeObject(vAgentes);
 			
+			/**
+			 * Lectura de los archivos Arma y Piso, ademas del vector de los agentes.
+			 * Escritura de los mismo en el archivo creado anteriormente.
+			 */
+			
 			far.delete();
 			fpi.delete();
 			
+			/**
+			 * Eliminación de los archivos Arma y Piso.
+			 */
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -59,8 +86,14 @@ public class Encriptar {
 			e1.printStackTrace();
 		}
 		
+		
 	}
 	
+	
+	/**
+	 * Desencriptar toda la información.
+	 * @param rutaFichero ruta relativa del fichero.
+	 */
 	
 	public static void desencriptarInfo(String rutaFichero) {
 		

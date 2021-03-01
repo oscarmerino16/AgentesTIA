@@ -11,8 +11,20 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+/**
+ * Esata clase define los metodos cargarArma leerArma cargarPiso leerPiso y cargarDatosTexto
+ * @author Óscar Merino Cases y Marcos Hernandez Aragones.
+ * @version 1/03/2021 1.0
+ *
+ */
 
 public class IODato {
+	
+	/**
+	 * Metodo para cargar Armas.
+	 * @param rutaFichero ruta relativa del fichero
+	 * @param Datos Vector de armas.
+	 */
 	
 	public static void cargarArmas(String rutaFichero, String[] Datos) {
 		File f = new File(rutaFichero);
@@ -53,6 +65,11 @@ public class IODato {
 		}
 	}
 	
+	/**
+	 * Metodo para leer Armas.
+	 * @param rutaFichero Ruta relativa del fichero
+	 * @return Vector de vArma.
+	 */
 	
 	public static String[] leerArma(String rutaFichero) {
 		
@@ -90,6 +107,11 @@ public class IODato {
 		return vArma;
 	}
 	
+	/**
+	 * Metodo para cargar Pisos.
+	 * @param rutaFichero ruta relativa del fichero
+	 * @param piso Vector de los pisos
+	 */
 	
 	public static void cargarPiso(String rutaFichero, String[] piso) {
 		File f = new File(rutaFichero);
@@ -125,6 +147,12 @@ public class IODato {
 		}
 	}
 	
+	/**
+	 * Metodo para leer los pisos.
+	 * @param rutafichero ruta absoluta de los ficheros
+	 * @return Devuelve el vector de vPiso.
+	 */
+	
 	public static String[] leerPiso(String rutafichero) {
 		
 		String[] vPiso= new String[10];
@@ -159,7 +187,12 @@ public class IODato {
 		return vPiso;
 	}
 
-
+/**
+ * Metodo para cargar la informacion de los ficheros.
+ * @param rutaFichero ruta absoluta del archivo que queremoscargar la informacion.
+ * @return devuelve el vector con la uinformacion del archivo.
+ */
+	
 	public static String[] cargarDatosTexto(String rutaFichero) {
 		
 		String[] vector = new String[10];

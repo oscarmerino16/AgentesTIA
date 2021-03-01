@@ -8,7 +8,18 @@ import java.util.Scanner;
 
 import IODatos.IODato;
 
+/**
+ * Clase Main del trabajo.
+ * @author Óscar Merino Cases y Marcos Hernández Aragonés.
+ * @version 1/03/2021 1.0
+ *
+ */
 public class Main {
+	
+	/**
+	 * metodo para añadir armas.
+	 * @param rutaFichero ruta relativo del fichero.
+	 */
 	
 	public static void addArma(String rutaFichero) {
 		
@@ -31,10 +42,14 @@ public class Main {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 
-
+/**
+ * Metodo para ver los agentes que tenemos creados.
+ * @param vAgentes vector de agentes.
+ */
+	
 	public static void verAgentes(Agente[] vAgentes) {
 		
 		Scanner leer = new Scanner(System.in);
@@ -47,7 +62,10 @@ public class Main {
 		}
 		
 	}
-	
+	/**
+	 * Metodo para ver los agentes que ganen más de esa cantidad.
+	 * @param vAgentes vector de los agentes.
+	 */
 	public static void verAgentesDinero(Agente[] vAgentes) {
 		
 		Scanner leer = new Scanner(System.in);
@@ -62,7 +80,10 @@ public class Main {
 		
 
 	}
-	
+	/**
+	 * Metodo para añadir agentes.
+	 * @param vector Vector de los agentes.
+	 */
 	public static void addAgente(Agente[] vector) {
 		Scanner leer = new Scanner(System.in);
 		
@@ -104,6 +125,11 @@ public class Main {
 		
 			
 	}
+	/**
+	 * Metodo para busacar un hueco libre en el vector de Agetes.
+	 * @param vector Vector de los agentes.
+	 * @return Devuelve -1 si no queda ningun sitio libre.
+	 */
 	private static int buscarHueco(Agente[] vector) {
 		for (int i = 0; i < vector.length; i++) {
 			if (vector==null) {
@@ -112,8 +138,13 @@ public class Main {
 		}
 		
 		return -1;
+		
 	}
-	
+	/**
+	 * Metodo para añadir un piso al vector de pisos.
+	 * @param vPiso vector de pisos.
+	 * @return se devuelve el vector de pisos.
+	 */
 	public static String[] addPiso(String[] vPiso) {
 		Scanner leer = new Scanner(System.in);
 		
@@ -128,6 +159,7 @@ public class Main {
 		}
 		return vPiso;
 	}
+	
 	
 	
 	public static void main(String[] args) {
@@ -224,6 +256,7 @@ public class Main {
 		
 		//verAgentes(vAgentes);
 		//verAgentesDinero(vAgentes);
+		
 		
 
 	}
