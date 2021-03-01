@@ -12,7 +12,7 @@ public final class Jefazo extends Agente {
 	
 	private int Ano_mandato;
 /**
- * Descripcion Esta clase declaramos el atributo de año_mandato y cogemos los atributos que tenemos en la clase padre Agente
+ * Descripcion Esta clase declaramos el atributo de año_mandato y cogemos los atributos que tenemos en la clase padre Agente.
  * @param nombre
  * @param edad
  * @param direccion
