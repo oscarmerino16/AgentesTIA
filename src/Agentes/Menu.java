@@ -1,9 +1,18 @@
 package Agentes;
 
 import java.util.Scanner;
-
+/**
+ * Clase para pintar el menu.
+ * @author Óscar Merino Cases y Marcos Hernández Aragonés
+ * @version 1/03/2021 1.0
+ */
 public class Menu {
 
+	/**
+	 * Metodo para ver el Menu y que nos devuelva una opcion.
+	 * @return Devuelve la opcion selecionada.
+	 */
+	
 	public static int pintaMenu() {
 		int opc =0;
 		Scanner leer = new Scanner(System.in);
