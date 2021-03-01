@@ -190,7 +190,7 @@ public class IODato {
 /**
  * Metodo para cargar la informacion de los ficheros.
  * @param rutaFichero ruta absoluta del archivo que queremoscargar la informacion.
- * @return devuelve el vector con la uinformacion del archivo .
+ * @return devuelve el vector con la uinformacion del archivo.
  */
 	
 	public static String[] cargarDatosTexto(String rutaFichero) {
