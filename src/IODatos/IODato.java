@@ -74,7 +74,7 @@ public class IODato {
 	public static String[] leerArma(String rutaFichero) {
 		
 		File f = new File(rutaFichero);
-		
+		int cont = 0;
 		String[] vArma = new String[10];
 		
 		if (!f.exists()) {
@@ -91,8 +91,9 @@ public class IODato {
 			
 			
 			while (true) {
-				System.out.println(leer.readUTF());
-				System.out.println("");
+				System.out.println(vArma[cont]);
+				//vArma[cont]= (String) leer.readUTF();
+				cont++;
 			}
 			
 			
