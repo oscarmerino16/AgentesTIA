@@ -1,6 +1,10 @@
 package Agentes;
 
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -116,7 +120,6 @@ public class Main {
 			System.out.println("Las armas del agente se añaden en addArmas");
 		}
 	}
-
 	/**
 	 * Metodo para añadir un piso al vector de pisos.
 	 * @param vPiso vector de pisos.
@@ -130,7 +133,12 @@ public class Main {
 		System.out.println("Dime la direccion del piso");
 		direccion = leer.next();
 		
+		
+		
+		
 	}
+	
+	
 	
 	public static void main(String[] args) {
 
@@ -173,7 +181,7 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Dando de alta un Piso");
-				addPiso();
+				IODato.addPiso();
 				opc=-1;
 				break;
 			case 4:

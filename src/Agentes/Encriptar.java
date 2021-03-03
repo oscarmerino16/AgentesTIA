@@ -67,17 +67,10 @@ public class Encriptar {
 			
 			escribir.writeObject(vAgentes);
 			
-			/**
-			 * Lectura de los archivos Arma y Piso, ademas del vector de los agentes.
-			 * Escritura de los mismo en el archivo creado anteriormente.
-			 */
 			
 			far.delete();
 			fpi.delete();
 			
-			/**
-			 * Eliminación de los archivos Arma y Piso.
-			 */
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -106,7 +99,8 @@ public class Encriptar {
 		ArrayList<String> vPiso = new ArrayList();
 		ArrayList<String> vAgentes = new ArrayList();
 		
-		/*String[] vArma= new String[10];
+		/*
+		 * String[] vArma= new String[10];
 		String[] vPiso= new String[10];
 		String[] vAgentes= new String[10];
 		*/
