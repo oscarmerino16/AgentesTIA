@@ -1,5 +1,7 @@
 package Agentes;
 
+import java.util.ArrayList;
+
 import IODatos.IODato;
 
 /**
@@ -11,7 +13,7 @@ import IODatos.IODato;
  
 public final class AgenteEspionaje extends Agente  {
 
-	private String [] vPisos;
+	private ArrayList<String> vPisos = new ArrayList();
 	/**
 	 * 
 	 * @param nombre
@@ -30,7 +32,7 @@ public final class AgenteEspionaje extends Agente  {
 	 */
 
 
-	public String[] getvPisos() {
+	public ArrayList<String> getvPisos() {
 		return vPisos;
 	}
 	/**
@@ -38,7 +40,7 @@ public final class AgenteEspionaje extends Agente  {
 	 * @param vPisos
 	 */
 
-	public void setvPisos(String[] vPisos) {
+	public void setvPisos(ArrayList<String> vPisos) {
 		this.vPisos = vPisos;
 	}
 	

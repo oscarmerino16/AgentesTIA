@@ -1,5 +1,7 @@
 package Agentes;
 
+import java.util.ArrayList;
+
 import IODatos.IODato;
 /**
  * Descripcion En esta clase declaramos el vector de armas y le pasamos los atributios de Agente
@@ -10,7 +12,7 @@ import IODatos.IODato;
 public final class Agente007 extends Agente {
 
 	private int contmuertes;
-	private String[] vArmar;
+	private ArrayList vArmar= new ArrayList();
 	/**
 	 * 
 	 * @param nombre
@@ -49,14 +51,14 @@ public final class Agente007 extends Agente {
 	 * 
 	 * @return devolvemos el vector de armas
 	 */
-	public String[] getvArmar() {
+	public ArrayList<String> getvArmar() {
 		return vArmar;
 	}
 	/**
 	 * 
 	 * @param vArmar
 	 */
-	public void setvArmar(String[] vArmar) {
+	public void setvArmar(ArrayList vArmar) {
 		this.vArmar = vArmar;
 	}
 	

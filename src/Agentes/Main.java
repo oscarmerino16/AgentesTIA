@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import IODatos.IODato;
@@ -145,19 +146,17 @@ public class Main {
 	 * @param vPiso vector de pisos.
 	 * @return se devuelve el vector de pisos.
 	 */
-	public static String[] addPiso(String[] vPiso) {
+	public static void addPiso() {
 		Scanner leer = new Scanner(System.in);
 		
 		String direccion;
 		
 		System.out.println("Dime la direccion del piso");
 		direccion = leer.next();
-		for (int i = 0; i < vPiso.length; i++) {
-			if (vPiso[i]==null) {
-				vPiso[i]= new String(direccion);
-			}
-		}
-		return vPiso;
+		
+		
+		
+		
 	}
 	
 	
@@ -179,20 +178,30 @@ public class Main {
 		vAgentes[1] = new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250);
 		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500);
 		
-		String[] vArma = new String[10];
+		/*String[] vArma = new String[10];
 
 		vArma[0] = new String("Pistola");
 		vArma[1] = new String("Rifle");
 		vArma[2] = new String("subfusil");
+		*/
 		
-		String[] vPiso = new String[10];
+		ArrayList<String> vArma = new ArrayList();
+		
+		vArma.add("Pistola");
+		vArma.add("Rifle");
+		vArma.add("Subsufil");
+		
+		/*String[] vPiso = new String[10];
 
 		vPiso[0] = new String("c/Ejemplo1");
 		vPiso[1] = new String("c/Ejemplo2");
 		vPiso[2] = new String("c/ejemplo3");
+		*/
+		ArrayList<String> vPiso = new ArrayList();
 		
-		
-		
+		vPiso.add("c/Ejemplo1");
+		vPiso.add("c/Ejemplo2");
+		vPiso.add("c/Ejemplo3");
 		
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
@@ -216,7 +225,7 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Dando de alta un Piso");
-				addPiso(vPiso);
+				addPiso();
 				opc=-1;
 				break;
 			case 4:

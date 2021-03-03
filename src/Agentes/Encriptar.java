@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import IODatos.IODato;
 
@@ -56,11 +57,11 @@ public class Encriptar {
 		try (FileOutputStream fo = new FileOutputStream(f);
 			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
 			
-			String[] vArma = IODato.cargarDatosTexto("Arma.dat");
+			ArrayList<String> vArma = IODato.cargarDatosTexto("Arma.dat");
 			
 			escribir.writeObject(vArma);
 			
-			String[] vPiso = IODato.cargarDatosTexto("Piso.dat");
+			ArrayList<String> vPiso = IODato.cargarDatosTexto("Piso.dat");
 			
 			escribir.writeObject(vPiso);
 			
@@ -100,10 +101,15 @@ public class Encriptar {
 		File f = new File(rutaFichero);
 		
 		int cont = 0;
-		String[] vArma= new String[10];
+		
+		ArrayList<String> vArma = new ArrayList();
+		ArrayList<String> vPiso = new ArrayList();
+		ArrayList<String> vAgentes = new ArrayList();
+		
+		/*String[] vArma= new String[10];
 		String[] vPiso= new String[10];
 		String[] vAgentes= new String[10];
-		
+		*/
 		if (!f.exists()) {
 			try {
 				f.createNewFile();
@@ -117,9 +123,9 @@ public class Encriptar {
 			 ObjectInputStream leer = new ObjectInputStream(fi);){
 			
 			while (true) {
-				vArma[cont]= (String) leer.readObject();
-				vPiso[cont]= (String) leer.readObject();
-				vAgentes[cont]= (String) leer.readObject();
+				vArma= (ArrayList<String>) leer.readObject();
+				vPiso= (ArrayList<String>) leer.readObject();
+				vAgentes=(ArrayList<String>) leer.readObject();
 			}
 
 			

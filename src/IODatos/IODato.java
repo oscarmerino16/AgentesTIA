@@ -9,6 +9,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -71,11 +73,11 @@ public class IODato {
 	 * @return Vector de vArma.
 	 */
 	
-	public static String[] leerArma(String rutaFichero) {
+	public static ArrayList<String> leerArma(String rutaFichero) {
 		
 		File f = new File(rutaFichero);
 		int cont = 0;
-		String[] vArma = new String[10];
+		ArrayList<String> vArma = new ArrayList();
 		
 		if (!f.exists()) {
 			try {
@@ -91,9 +93,9 @@ public class IODato {
 			
 			
 			while (true) {
-				System.out.println(vArma[cont]);
+				System.out.println(vArma);
 				//vArma[cont]= (String) leer.readUTF();
-				cont++;
+				//cont++;
 			}
 			
 			
@@ -154,10 +156,9 @@ public class IODato {
 	 * @return Devuelve el vector de vPiso.
 	 */
 	
-	public static String[] leerPiso(String rutafichero) {
+	public static ArrayList<String> leerPiso(String rutafichero) {
 		
-		String[] vPiso= new String[10];
-		
+		ArrayList<String> vPiso = new ArrayList();		
 		File f = new File(rutafichero);
 		
 		if (!f.exists()) {
@@ -194,9 +195,9 @@ public class IODato {
  * @return devuelve el vector con la uinformacion del archivo.
  */
 	
-	public static String[] cargarDatosTexto(String rutaFichero) {
+	public static ArrayList<String> cargarDatosTexto(String rutaFichero) {
 		
-		String[] vector = new String[10];
+		ArrayList<String> vVector = new ArrayList();
 
 		File f = new File(rutaFichero);
 
@@ -210,20 +211,29 @@ public class IODato {
 
 		try (FileReader fr = new FileReader(f); Scanner leer = new Scanner(fr);) {
 
-			int cont = 0;
+			Iterator it = vVector.iterator();
+			while (it.hasNext()) {
+				ArrayList<String> linea = (ArrayList<String>) it.next();
+				vVector = linea;
+				
+			}
+			
+		
+			
+			/*int cont = 0;
 			while (leer.hasNext()) {
 				String linea = leer.nextLine();
-				vector[cont] = linea;
+				vVector = linea;
 				cont++;
 			}
-
+*/
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 
-		return vector;
+		return vVector;
 	}
 	
 
