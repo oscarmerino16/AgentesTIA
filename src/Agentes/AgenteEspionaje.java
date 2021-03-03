@@ -13,7 +13,7 @@ import IODatos.IODato;
  
 public final class AgenteEspionaje extends Agente  {
 
-	private ArrayList<String> vPisos = new ArrayList();
+	private ArrayList<String> vPiso = new ArrayList();
 	/**
 	 * 
 	 * @param nombre
@@ -23,7 +23,7 @@ public final class AgenteEspionaje extends Agente  {
 	 */
 	public AgenteEspionaje(String nombre, int edad, String direccion, double salario) {
 		super(nombre, edad, direccion, salario);
-		this.vPisos = IODato.cargarDatosTexto("Piso.dat");
+		this.vPiso = IODato.cargarDatosTexto("Piso.dat");
 	}
 	/**
 	 * 
@@ -32,16 +32,16 @@ public final class AgenteEspionaje extends Agente  {
 	 */
 
 
-	public ArrayList<String> getvPisos() {
-		return vPisos;
+	public ArrayList<String> getvPiso() {
+		return vPiso;
 	}
 	/**
 	 * 
 	 * @param vPisos
 	 */
 
-	public void setvPisos(ArrayList<String> vPisos) {
-		this.vPisos = vPisos;
+	public void setvPisos(ArrayList<String> vPiso) {
+		this.vPiso = vPiso;
 	}
 	
 	@Override
@@ -50,7 +50,7 @@ public final class AgenteEspionaje extends Agente  {
 			   +"Edad: " + Edad + "\n"
 			   +"Direccion: " + Direccion + "\n"
 			   +"Salario: " + Salario + "\n"	
-			   +"Pisos: " + vPisos + "\n"
+			   +"Pisos: " + vPiso + "\n"
 				;
 	}
 

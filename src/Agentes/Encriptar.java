@@ -26,7 +26,7 @@ public class Encriptar {
 	 * @param rutaFichero Ruta relativa del fichero.
 	 * @param vAgentes Vector de los agentes que llega desde Main.
 	 */
-	public static void encriptarInfo(String rutaFichero,Agente[] vAgentes) {
+	public static void encriptarInfo(String rutaFichero,ArrayList<Agente> vAgentes) {
 		
 		
 		File f = new File(rutaFichero);

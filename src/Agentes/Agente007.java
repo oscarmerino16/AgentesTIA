@@ -12,7 +12,7 @@ import IODatos.IODato;
 public final class Agente007 extends Agente {
 
 	private int contmuertes;
-	private ArrayList vArmar= new ArrayList();
+	private ArrayList vArma= new ArrayList();
 	/**
 	 * 
 	 * @param nombre
@@ -25,7 +25,7 @@ public final class Agente007 extends Agente {
 		super(nombre, edad, direccion, salario);
 		this.contmuertes = contmuertes;
 	
-		this.vArmar = IODato.cargarDatosTexto("Arma.dat");
+		this.vArma = IODato.cargarDatosTexto("Arma.dat");
 		
 
 		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso());
@@ -51,15 +51,15 @@ public final class Agente007 extends Agente {
 	 * 
 	 * @return devolvemos el vector de armas
 	 */
-	public ArrayList<String> getvArmar() {
-		return vArmar;
+	public ArrayList<String> getvArma() {
+		return vArma;
 	}
 	/**
 	 * 
 	 * @param vArmar
 	 */
-	public void setvArmar(ArrayList vArmar) {
-		this.vArmar = vArmar;
+	public void setvArma(ArrayList vArma) {
+		this.vArma = vArma;
 	}
 	
 	@Override
@@ -69,7 +69,7 @@ public final class Agente007 extends Agente {
 				   +"Direccion: " + Direccion + "\n"
 				   +"Salario: " + Salario + "\n"
 				   +"Contador de muertes: " + contmuertes + "\n"			
-				   +"Cantidad de armas: " + vArmar + "\n"
+				   +"Cantidad de armas: " + vArma + "\n"
 
 					;
 	}
