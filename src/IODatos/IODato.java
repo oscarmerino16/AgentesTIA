@@ -31,10 +31,10 @@ public class IODato {
 	 * @param rutaFichero ruta relativa del fichero
 	 * @param Datos       Vector de armas.
 	 */
-
-	public static void cargarArmas(String rutaFichero, String[] Datos) {
+//Pruebas sobre este metodo
+	public static void anadirDatoTexto(String rutaFichero) {
 		File f = new File(rutaFichero);
-
+		String dato = "";
 		if (!f.exists()) {
 			try {
 				f.createNewFile();
@@ -44,17 +44,16 @@ public class IODato {
 			}
 		}
 
-		try (FileOutputStream fo = new FileOutputStream(f); ObjectOutputStream escribir = new ObjectOutputStream(fo);) {
+		try (FileWriter fw = new FileWriter(f,true); PrintWriter escribir = new PrintWriter(fw)) {
 
-			for (String ar : Datos) {
-				if (ar != null) {
-					String nombre;
-					Scanner leer = new Scanner(System.in);
+			if (rutaFichero.equalsIgnoreCase("Arma.txt")) {
+				System.out.println("Dime un arma para añadir");
+				
+			}else {
+				System.out.println("Dime un arma para añadir");
 
-					nombre = leer.next();
-					escribir.writeUTF(nombre);
-				}
 			}
+			escribir.println(dato);
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -64,6 +63,7 @@ public class IODato {
 			// e1.printStackTrace();
 			System.out.println("todo bien");
 		}
+	
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class IODato {
 	 * @param rutaFichero Ruta relativa del fichero
 	 * @return Vector de vArma.
 	 */
-
+/*
 	public static ArrayList<String> leerArma(String rutaFichero) {
 
 		File f = new File(rutaFichero);
@@ -90,11 +90,7 @@ public class IODato {
 
 		try (FileInputStream fi = new FileInputStream(f); ObjectInputStream leer = new ObjectInputStream(fi);) {
 
-			while (true) {
-				System.out.println(vArma);
-				// vArma[cont]= (String) leer.readUTF();
-				// cont++;
-			}
+			vArma = (ArrayList<String>) leer.readObject();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -102,10 +98,13 @@ public class IODato {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		return vArma;
-	}
+	}*/
 
 	/**
 	 * Metodo para añadir un piso al vector de pisos.
@@ -117,7 +116,7 @@ public class IODato {
 		Scanner leer = new Scanner(System.in);
 
 		String direccion;
-		String rutaFichero = "Piso.dat";
+		String rutaFichero = "Piso.txt";
 
 		System.out.println("Dime la direccion del piso");
 		direccion = leer.next();
@@ -152,7 +151,7 @@ public class IODato {
 	 * @param rutafichero ruta absoluta de los ficheros
 	 * @return Devuelve el vector de vPiso.
 	 */
-
+/*
 	public static ArrayList<String> leerPiso(String rutafichero) {
 
 		ArrayList<String> vPiso = new ArrayList();
@@ -182,7 +181,7 @@ public class IODato {
 		}
 
 		return vPiso;
-	}
+	}*/
 
 	/**
 	 * Metodo para cargar la informacion de los ficheros.
@@ -208,10 +207,10 @@ public class IODato {
 
 		try (FileReader fr = new FileReader(f); Scanner leer = new Scanner(fr);) {
 
-			Iterator it = vVector.iterator();
-			while (it.hasNext()) {
-				ArrayList<String> linea = (ArrayList<String>) it.next();
-				vVector = linea;
+			
+			while (leer.hasNext()) {
+				String linea = leer.nextLine();
+				vVector.add(linea);
 
 			}
 

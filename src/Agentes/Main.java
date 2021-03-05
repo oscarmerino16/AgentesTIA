@@ -148,7 +148,7 @@ public class Main {
 		vAgentes.add(new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250));
 		vAgentes.add(new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500));
 	
-		ArrayList<String> vArma = new ArrayList();
+		/*ArrayList<String> vArma = new ArrayList();
 		
 		vArma.add("Pistola");
 		vArma.add("Rifle");
@@ -159,9 +159,9 @@ public class Main {
 		vPiso.add("c/Ejemplo1");
 		vPiso.add("c/Ejemplo2");
 		vPiso.add("c/Ejemplo3");
-		
-		IODato.cargarArmas("Arma.dat", vArma);
-        IODato.cargarPiso("Piso.dat", vPiso);
+		*/
+		//IODato.anadirDatoTexto("Armas.txt");
+       
 		
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
@@ -181,12 +181,12 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Dando de alta un Piso");
-				IODato.addPiso();
+				IODato.anadirDatoTexto("Piso.txt");;
 				opc=-1;
 				break;
 			case 4:
 				System.out.println("Dando de alta una Arma");
-				addArma("Arma.dat");
+				IODato.anadirDatoTexto("Arma.txt");
 				System.out.println("Arma añadida");
 				opc=-1;
 				break;

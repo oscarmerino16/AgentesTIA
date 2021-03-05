@@ -23,7 +23,7 @@ public final class AgenteEspionaje extends Agente  {
 	 */
 	public AgenteEspionaje(String nombre, int edad, String direccion, double salario) {
 		super(nombre, edad, direccion, salario);
-		this.vPiso = IODato.cargarDatosTexto("Piso.dat");
+		this.vPiso = IODato.cargarDatosTexto("Piso.txt");
 	}
 	/**
 	 * 

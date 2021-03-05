@@ -30,8 +30,8 @@ public class Encriptar {
 		
 		
 		File f = new File(rutaFichero);
-		File far = new File("Arma.dat");
-		File fpi = new File("piso.dat");
+		File far = new File("Arma.txt");
+		File fpi = new File("Piso.txt");
 		
 		/**
 		 * Creacion del archivo donde se va aguardar toda la informacion.
@@ -57,11 +57,11 @@ public class Encriptar {
 		try (FileOutputStream fo = new FileOutputStream(f);
 			 ObjectOutputStream escribir = new ObjectOutputStream(fo);){
 			
-			ArrayList<String> vArma = IODato.cargarDatosTexto("Arma.dat");
+			ArrayList<String> vArma = IODato.cargarDatosTexto("Arma.txt");
 			
 			escribir.writeObject(vArma);
 			
-			ArrayList<String> vPiso = IODato.cargarDatosTexto("Piso.dat");
+			ArrayList<String> vPiso = IODato.cargarDatosTexto("Piso.txt");
 			
 			escribir.writeObject(vPiso);
 			
@@ -116,11 +116,11 @@ public class Encriptar {
 		try (FileInputStream fi = new FileInputStream(f);
 			 ObjectInputStream leer = new ObjectInputStream(fi);){
 			
-			while (true) {
+			
 				vArma= (ArrayList<String>) leer.readObject();
 				vPiso= (ArrayList<String>) leer.readObject();
 				vAgentes=(ArrayList<String>) leer.readObject();
-			}
+			
 
 			
 		} catch (FileNotFoundException e) {
@@ -134,7 +134,7 @@ public class Encriptar {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		//Borrar .dat y crear los ficheros de texto y el de ag3entes
 	}
 	
 	
