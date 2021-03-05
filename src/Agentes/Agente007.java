@@ -26,11 +26,7 @@ public final class Agente007 extends Agente {
 		this.contmuertes = contmuertes;
 	
 		this.vArma = IODato.cargarDatosTexto("Arma.txt");
-		
-
-		//this.vArmar = IODato.cargarArmas("Arma.dat", Main.addPiso());
-		
-		 
+	
 	}
 	/**
 	 * 

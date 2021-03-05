@@ -98,12 +98,7 @@ public class Encriptar {
 		ArrayList<String> vArma = new ArrayList();
 		ArrayList<String> vPiso = new ArrayList();
 		ArrayList<String> vAgentes = new ArrayList();
-		
-		/*
-		 * String[] vArma= new String[10];
-		String[] vPiso= new String[10];
-		String[] vAgentes= new String[10];
-		*/
+	
 		if (!f.exists()) {
 			try {
 				f.createNewFile();

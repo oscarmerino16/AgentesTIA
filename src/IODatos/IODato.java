@@ -66,45 +66,7 @@ public class IODato {
 	
 	}
 
-	/**
-	 * Metodo para leer Armas.
-	 * 
-	 * @param rutaFichero Ruta relativa del fichero
-	 * @return Vector de vArma.
-	 */
-/*
-	public static ArrayList<String> leerArma(String rutaFichero) {
 
-		File f = new File(rutaFichero);
-		int cont = 0;
-		ArrayList<String> vArma = new ArrayList();
-
-		if (!f.exists()) {
-			try {
-				f.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		try (FileInputStream fi = new FileInputStream(f); ObjectInputStream leer = new ObjectInputStream(fi);) {
-
-			vArma = (ArrayList<String>) leer.readObject();
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return vArma;
-	}*/
 
 	/**
 	 * Metodo para añadir un piso al vector de pisos.
@@ -145,43 +107,6 @@ public class IODato {
 		}
 	}
 
-	/**
-	 * Metodo para leer los pisos.
-	 * 
-	 * @param rutafichero ruta absoluta de los ficheros
-	 * @return Devuelve el vector de vPiso.
-	 */
-/*
-	public static ArrayList<String> leerPiso(String rutafichero) {
-
-		ArrayList<String> vPiso = new ArrayList();
-		File f = new File(rutafichero);
-
-		if (!f.exists()) {
-			try {
-				f.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		try (FileInputStream fi = new FileInputStream(f); ObjectInputStream leer = new ObjectInputStream(fi);) {
-
-			while (true) {
-				leer.readUTF();
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		return vPiso;
-	}*/
 
 	/**
 	 * Metodo para cargar la informacion de los ficheros.
@@ -214,10 +139,6 @@ public class IODato {
 
 			}
 
-			/*
-			 * int cont = 0; while (leer.hasNext()) { String linea = leer.nextLine();
-			 * vVector = linea; cont++; }
-			 */
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e1) {
