@@ -6,9 +6,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import IODatos.IODato;
@@ -92,6 +94,9 @@ public class Encriptar {
 	public static void desencriptarInfo(String rutaFichero) {
 		
 		File f = new File(rutaFichero);
+		File fa = new File("Arma.txt");
+		File fp = new File("Piso.txt");
+		File fag = new File("Agnete.txt");
 		
 		int cont = 0;
 		
@@ -112,11 +117,11 @@ public class Encriptar {
 			 ObjectInputStream leer = new ObjectInputStream(fi);){
 			
 			
-				vArma= (ArrayList<String>) leer.readObject();
-				vPiso= (ArrayList<String>) leer.readObject();
-				vAgentes=(ArrayList<String>) leer.readObject();
+				vArma = (ArrayList<String>) leer.readObject();
+				vPiso = (ArrayList<String>) leer.readObject();
+				vAgentes = (ArrayList<String>) leer.readObject();
 			
-
+				f.delete();
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -129,6 +134,68 @@ public class Encriptar {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		if (!fa.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try (FileWriter fw = new FileWriter(fa);
+			 PrintWriter escribir =  new PrintWriter(fw);){
+			
+			for (String s : vArma) {
+				escribir.println(s);
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		if (!fp.exists()) {
+			try {
+				fp.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try (FileWriter fw = new FileWriter(fp);
+			 PrintWriter escribir = new PrintWriter(fw);){
+			for (String s : vPiso) {
+				escribir.println(s);
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (!fag.exists()) {
+			try {
+				fag.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try {
+			FileOutputStream fo = new FileOutputStream(fag);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		//Borrar .dat y crear los ficheros de texto y el de ag3entes
 	}
 	
