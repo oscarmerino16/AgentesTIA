@@ -84,7 +84,7 @@ public class Main {
 	}
 	/**
 	 * Metodo para añadir agentes.
-	 * @param vector Vector de los agentes.
+	 * @param vVector.
 	 */
 	public static void addAgente(ArrayList<Agente> vVector) {
 		Scanner leer = new Scanner(System.in);
@@ -121,9 +121,7 @@ public class Main {
 		}
 	}
 	/**
-	 * Metodo para añadir un piso al vector de pisos.
-	 * @param vPiso vector de pisos.
-	 * @return se devuelve el vector de pisos.
+	 * 
 	 */
 	public static void addPiso() {
 		Scanner leer = new Scanner(System.in);
