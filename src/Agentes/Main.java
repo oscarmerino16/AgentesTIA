@@ -1,9 +1,14 @@
 package Agentes;
 
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import IODatos.IODato;
@@ -50,15 +55,12 @@ public class Main {
  * @param vAgentes vector de agentes.
  */
 	
-	public static void verAgentes(Agente[] vAgentes) {
-		
-		Scanner leer = new Scanner(System.in);
+	public static void verAgentes(ArrayList<Agente> vAgentes) {
 		
 		for (Agente a : vAgentes) {
 			if (a!=null) {
 				System.out.println(a);
 			}
-
 		}
 		
 	}
@@ -66,7 +68,7 @@ public class Main {
 	 * Metodo para ver los agentes que ganen más de esa cantidad.
 	 * @param vAgentes vector de los agentes.
 	 */
-	public static void verAgentesDinero(Agente[] vAgentes) {
+	public static void verAgentesDinero(ArrayList<Agente> vAgentes) {
 		
 		Scanner leer = new Scanner(System.in);
 		double cantidad;
@@ -82,13 +84,13 @@ public class Main {
 	}
 	/**
 	 * Metodo para añadir agentes.
-	 * @param vector Vector de los agentes.
+	 * @param vVector.
 	 */
-	public static void addAgente(Agente[] vector) {
+	public static void addAgente(ArrayList<Agente> vVector) {
 		Scanner leer = new Scanner(System.in);
 		
 		String nombre, direccion, tipo;
-		int edad, ano_mandato, contmuertes, libre=buscarHueco(vector);
+		int edad, ano_mandato, contmuertes;
 		double salario;
 		
 		System.out.println("Dime el nombre del nuevo agente");
@@ -106,101 +108,48 @@ public class Main {
 		if (tipo.equalsIgnoreCase("Jefazo")) {
 			System.out.println("Dime el año de mandato del nuevo agente");
 			ano_mandato = leer.nextInt();
-			vector[libre] = new Jefazo(nombre, edad, direccion, salario, ano_mandato);
+			vVector.add( new Jefazo(nombre, edad, direccion, salario, ano_mandato));
 		}
 		if (tipo.equalsIgnoreCase("Agente007")) {
 			System.out.println("Dime el numero de muertos del nuevo agente");
 			contmuertes=leer.nextInt();
-			/*/comprobar con fichero de armas
-			System.out.println("Dime las armas del nuevo agente");
-			contmuertes=leer.nextInt();*/
-			vector[libre] = new Agente007(nombre, edad, direccion, salario, contmuertes);
-		}
-		//comprobar con fichero pisos
-		/*if (tipo.equalsIgnoreCase("Agente de Espionaje")) {
-			System.out.println("Dime los pisos del nuevo agente");
-			salario = leer.nextDouble();
-		}*/
-			vector[libre]= new AgenteEspionaje(nombre, edad, direccion, salario);
-		
 			
-	}
-	/**
-	 * Metodo para busacar un hueco libre en el vector de Agetes.
-	 * @param vector Vector de los agentes.
-	 * @return Devuelve -1 si no queda ningun sitio libre.
-	 */
-	private static int buscarHueco(Agente[] vector) {
-		for (int i = 0; i < vector.length; i++) {
-			if (vector==null) {
-				return i;
-			}
+			vVector.add( new Agente007(nombre, edad, direccion, salario, contmuertes));
 		}
-		
-		return -1;
-		
+		if (tipo.equalsIgnoreCase("Agente de Espionaje")) {
+			System.out.println("Las armas del agente se añaden en addArmas");
+		}
 	}
 	/**
-	 * Metodo para añadir un piso al vector de pisos.
-	 * @param vPiso vector de pisos.
-	 * @return se devuelve el vector de pisos.
+	 * 
 	 */
-	public static String[] addPiso(String[] vPiso) {
+	public static void addPiso() {
 		Scanner leer = new Scanner(System.in);
 		
 		String direccion;
 		
 		System.out.println("Dime la direccion del piso");
 		direccion = leer.next();
-		for (int i = 0; i < vPiso.length; i++) {
-			if (vPiso[i]==null) {
-				vPiso[i]= new String(direccion);
-			}
-		}
-		return vPiso;
+		
+		
+		
+		
 	}
 	
 	
 	
 	public static void main(String[] args) {
-		
-/*
-		Jefazo vAgentes[] = new Jefazo[10];
 
-		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara n18", 5000, 2001);
-		vAgentes[1] = new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250, 5);
-		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500, 2);
-*/
+		ArrayList<Agente> vAgentes = new ArrayList<Agente>();
 
-
-		Agente[] vAgentes = new Agente[10];
-
-		vAgentes[0] = new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011);
-		vAgentes[1] = new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250);
-		vAgentes[2] = new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500);
-		
-		String[] vArma = new String[10];
-
-		vArma[0] = new String("Pistola");
-		vArma[1] = new String("Rifle");
-		vArma[2] = new String("subfusil");
-		
-		String[] vPiso = new String[10];
-
-		vPiso[0] = new String("c/Ejemplo1");
-		vPiso[1] = new String("c/Ejemplo2");
-		vPiso[2] = new String("c/ejemplo3");
-		
-		
-		
+		vAgentes.add(new Jefazo("Oscar", 20, "C/ Santa Clara", 5000, 2011));
+		vAgentes.add(new Agente007("Marcos", 20, "C/ Castelseras n2", 3000, 250));
+		vAgentes.add(new AgenteEspionaje("Kasper", 20, "C/ El korral n34", 1500));
+	
 		
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
-		
-		//IODato.cargarArmas("Arma.dat", vArma);
-		//IODato.cargarPiso("Piso.dat", vPiso);
-		
-		
+	
 		do {
 			opc=Menu.pintaMenu();
 			switch (opc) {
@@ -216,12 +165,12 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Dando de alta un Piso");
-				addPiso(vPiso);
+				IODato.anadirDatoTexto("Piso.txt");;
 				opc=-1;
 				break;
 			case 4:
 				System.out.println("Dando de alta una Arma");
-				addArma("Arma.dat");
+				IODato.anadirDatoTexto("Arma.txt");
 				System.out.println("Arma añadida");
 				opc=-1;
 				break;
@@ -251,12 +200,6 @@ public class Main {
 
 			
 		} while (opc<1 || opc>8);
-		
-		
-		
-		//verAgentes(vAgentes);
-		//verAgentesDinero(vAgentes);
-		
 		
 
 	}
